@@ -1,5 +1,5 @@
 <template>
-	<view class="homeLayout">
+	<view class="homeLayout pagetBg">
 		<view class="banner">
 			<swiper indicator-dots circular autoplay indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff">
 				<!-- <swiper-item v-for="(img, index) in images" :key="index">
@@ -18,7 +18,7 @@
 		</view>
 		<view class="notice">
 			<view class="left">
-				<uni-icons type="sound-filled" size="20" color="#28b389"></uni-icons>
+				<uni-icons type="sound-filled" size="20"></uni-icons>
 				<text class="text">公告</text>
 			</view>
 			<view class="center">
@@ -32,7 +32,7 @@
 				</swiper>
 			</view>
 			<view class="right">
-				<uni-icons type="right" size="16" color="#28b389"></uni-icons>
+				<uni-icons type="right" size="16"></uni-icons>
 			</view>
 			
 		</view>
@@ -42,7 +42,7 @@
 				<template #title>每日推荐</template>
 				<template #custom>
 					<view class="date">
-						<uni-icons type="calendar" size="30" color="#28b389"></uni-icons>
+						<uni-icons type="calendar" size="30"></uni-icons>
 						<view class="text">
 							<uni-dateformat :date="Date.now()" format="yyyyMMdd"></uni-dateformat>
 						</view>
@@ -107,16 +107,23 @@
 			margin: 0 auto;
 			border-radius: 80rpx;
 			display: flex;
+			:deep(){
+				.uni-icons{
+					color: $brand-theme-color !important;
+				}
+			}
+		
 			.left{
 				width: 140rpx;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				.text{
-					color: #28b389;
+					color:$brand-theme-color;
 					font-weight: 600;
 					font-size: 28rpx;
 				}
+			
 			}
 			.center{
 				flex: 1;
@@ -147,6 +154,11 @@
 		
 		.select{
 			padding-top: 50rpx;
+			:deep(){
+				.uni-icons{
+					color: $brand-theme-color !important;
+				}
+			}
 			.content{
 				width: 720rpx;
 				margin-top: 30rpx;
@@ -170,7 +182,7 @@
 				}
 			}
 			.date{
-				color: #28b389;
+				color: $brand-theme-color;
 				align-items: center;
 				display: flex;
 				white-space: nowrap;
@@ -178,6 +190,7 @@
 					margin: left 15rpx;
 				}
 			}
+			
 		}
 		
 		.theme{
